@@ -12,7 +12,6 @@ function About({}: Props) {
 			</h3>
 
 			<motion.img
-				src={Headshot.src}
 				initial={{
 					x: -200,
 					opacity: 0,
@@ -22,11 +21,26 @@ function About({}: Props) {
 				}}
 				whileInView={{ opacity: 1, x: 0 }}
 				viewport={{ once: true }}
-				className='-mb-20 md:mb-0 flex-shrink-0 h-80 w-80 rounded-full object-cover md:rounded-lg md:w-64 md:h-95 xl:w-[500px] xl:h-[600px]'
+				src={Headshot.src}
+				className='-mb-20 md:mb-0 flex-shrink-0 w-80 h-80 rounded-full object-cover md:rounded-lg md:w-64 md:h-95 xl:w-[500px] xl:h-[600px]'
 			/>
 
-			<div>
-				<h4></h4>
+			<div className='space-y-10 px-0 md:px-10'>
+				<h4 className='text-4xl font-semibold'>
+					Here is a{' '}
+					<span className='underline decoration-[#F7AB0A]/50'>little</span>{' '}
+					background
+				</h4>
+				<p className='text-sm'>
+					I am a software engineer and a musician. I've put my heart and soul
+					into my two passions. Music and technology. Whether it be playing the
+					drums across the US or learning HTML, CSS and JavaScript, I've taken
+					the ability to find creative solutions to difficult problems,
+					flexibility, time management and working with a team. I'm dedicated,
+					motivated and passionate and whether it be playing drums in front of
+					hundreds or writing web applications for thousands I know that I can
+					deliver the best product possible.
+				</p>
 			</div>
 		</div>
 	);
