@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import ExperienceCard from './ExperienceCard';
 
 type Props = {};
 
@@ -14,7 +15,11 @@ function WorkExperience({}: Props) {
 				Experience
 			</h3>
 
-			<div></div>
+			<div>
+				<ExperienceCard />
+				<ExperienceCard />
+				<ExperienceCard />
+			</div>
 		</motion.div>
 	);
 }
