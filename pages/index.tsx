@@ -4,6 +4,7 @@ import Hero from '@/components/Hero';
 import type { NextPage } from 'next';
 import About from '@/components/About';
 import WorkExperience from '@/components/WorkExperience';
+import Skills from '@/components/Skills';
 
 const Home: NextPage = () => {
 	return (
@@ -34,6 +35,9 @@ const Home: NextPage = () => {
 			</section>
 
 			{/* Skills */}
+			<section id='skills' className='snap-start'>
+				<Skills />
+			</section>
 
 			{/* Projects */}
 
