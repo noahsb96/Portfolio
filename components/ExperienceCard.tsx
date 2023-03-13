@@ -1,7 +1,6 @@
 import React from 'react';
 import Petes from '../images/Petes.jpg';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 
 type Props = {};
 
