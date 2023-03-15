@@ -9,6 +9,12 @@ function Projects({}: Props) {
 				Projects
 			</h3>
 
+			<div className='relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20'>
+				{/*projects*/}
+				{/*projects*/}
+				{/*projects*/}
+			</div>
+
 			<div className='w-full absolute top-[30%] bg-[#F7AB0A]/10 left-0 h-[500px] -skew-y-12'></div>
 		</div>
 	);
