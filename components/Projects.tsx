@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import React from 'react';
 
 type Props = {};
@@ -12,7 +13,11 @@ function Projects({}: Props) {
 
 			<div className='relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20'>
 				{projects.map((project, i) => (
-					<div className='w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen'>
+					<motion.div
+						initial={{ opacity: 0 }}
+						whileInView={{ opacity: 1 }}
+						transition={{ duration: 1.5 }}
+						className='w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen'>
 						<img
 							src='http://cdn.sanity.io/images/ltuexkre/production/af7ca99b5a796d0698cf9121a4a0795b5022b6be-666x375.png'
 							alt=''
@@ -26,7 +31,7 @@ function Projects({}: Props) {
 								UPS clone
 							</h4>
 
-							<p className='text-lg  text-center md:text-left'>
+							<p className='text-lg text-center md:text-left'>
 								Netflix 2.0 app that has a Log In and Log Out Authentication
 								with Google. It has a beautiful Home Screen with all the movies
 								looking just like Netflix. There is also a subscription page
@@ -34,7 +39,7 @@ function Projects({}: Props) {
 								Stripe Payments for the monthly Netflix Subscriptions!
 							</p>
 						</div>
-					</div>
+					</motion.div>
 				))}
 			</div>
 
