@@ -19,7 +19,7 @@ function Projects({}: Props) {
 						/>
 
 						<div>
-							<h4>Case Study {i+1} of 3: UPS clone</h4>
+							<h4>Case Study {i+1} of {projects.length}: UPS clone</h4>
 						</div>
 					</div>
 				))}
