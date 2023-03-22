@@ -35,14 +35,25 @@ function ContactMe({}: Props) {
 
 				<form className='flex flex-col space-y-2 w-fit mx-auto'>
 					<div className='flex space-x-2'>
-						<input className='contactInput' type='text' />
-						<input className='contactInput' type='text' />
+						<input
+							className='contactInput'
+							type='text'
+						/>
+						<input
+							className='contactInput'
+							type='text'
+						/>
 					</div>
 
-					<input className='contactInput' type='text' />
+					<input
+						className='contactInput'
+						type='text'
+					/>
 
 					<textarea className='contactInput' />
-					<button>Submit</button>
+					<button className='bg-[#F7AB0A] py-5 px-10 rounded-md text-black font-bold text-lg'>
+						Submit
+					</button>
 				</form>
 			</div>
 		</div>
