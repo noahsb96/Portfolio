@@ -26,12 +26,24 @@ function ContactMe({}: Props) {
 						<EnvelopeIcon className='text-[#F7AB0A] h-7 w-7 animate-pulse' />
 						<p className='text-2xl'>noahsb96@yahoo.com</p>
 					</div>
-					
+
 					<div className='flex items-center space-x-5 justify-center'>
 						<MapPinIcon className='text-[#F7AB0A] h-7 w-7 animate-pulse' />
 						<p className='text-2xl'>Denver, CO</p>
 					</div>
 				</div>
+
+				<form className='flex flex-colspace-y-2 w-fit mx-auto'>
+					<div>
+						<input type='text' />
+						<input type='text' />
+					</div>
+
+					<input type='text' />
+
+					<textarea />
+					<button></button>
+				</form>
 			</div>
 		</div>
 	);
