@@ -10,7 +10,7 @@ import ContactMe from '@/components/ContactMe';
 
 const Home: NextPage = () => {
 	return (
-		<div className='bg-[rgb(5,5,5)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0'>
+		<div className='bg-[rgb(5,5,5)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80'>
 			<Head>
 				<title>Noah Bruce</title>
 			</Head>
