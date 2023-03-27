@@ -7,6 +7,7 @@ import WorkExperience from '@/components/WorkExperience';
 import Skills from '@/components/Skills';
 import Projects from '@/components/Projects';
 import ContactMe from '@/components/ContactMe';
+import Link from 'next/link';
 
 const Home: NextPage = () => {
 	return (
@@ -52,6 +53,17 @@ const Home: NextPage = () => {
 				className='snap-start'>
 				<ContactMe />
 			</section>
+
+			<Link href='#hero'>
+				<footer>
+					<div>
+						<img
+							src='https://i.imgur.com/e2yvD6A.png'
+							alt=''
+						/>
+					</div>
+				</footer>
+			</Link>
 		</div>
 	);
 };
