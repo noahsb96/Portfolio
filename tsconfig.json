@@ -25,7 +25,7 @@
 		"sanity/schemas/author.js",
 		"sanity/schemas/blockContent.js",
 		"sanity/schemas/category.js",
-		"sanity/schemas/index.js",
+		"sanity/schemas/schema.js",
 		"sanity/schemas/pageInfo.js"
 	],
 	"exclude": ["node_modules"]
