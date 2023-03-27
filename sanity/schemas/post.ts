@@ -4,5 +4,22 @@ export default defineType({
   name: 'pageInfo',
   title: 'PageInfo',
   type: 'document',
-  fields: [],
+  fields: [
+    {
+      name: 'name',
+      title: "Name",
+      type: 'string',
+    },
+    {
+      name: 'heroImage',
+      title: 'Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    },
+    {
+      name: 
+    }
+  ],
 })
