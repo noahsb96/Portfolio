@@ -2,10 +2,10 @@ import createImageUrlBuilder from '@sanity/image-url'
 import { createClient } from "next-sanity";
 
 export const config = {
-  projectId: "lqz08o01",
-  dataset: "production",
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
   apiVersion: "2022-03-25",
-  useCdn: false
+  useCdn: process.env.NODE_ENV === 'production'
 });
 
 export const sanityClient = createClient(config);
