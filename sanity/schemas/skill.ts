@@ -6,11 +6,6 @@ export default defineType({
   type: 'document',
   fields: [
     defineField({
-      name: 'jobTitle',
-      title: 'JobTitle',
-      type: 'string',
-    }),
-    defineField({
       name: 'title',
       title: 'title',
       description: 'Title of skill',
