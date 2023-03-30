@@ -26,10 +26,17 @@ export interface PageInfo extends SanityBody {
 }
 
 export interface Technology extends SanityBody {
-    _type: 'skill';
-    image: Image;
-    progress: number;
-    title: string;
+	_type: 'skill';
+	image: Image;
+	progress: number;
+	title: string;
+}
+
+export interface Skill extends SanityBody {
+	_type: 'skill';
+	image: Image;
+	progress: number;
+	title: string;
 }
 
 export interface Social extends SanityBody {
