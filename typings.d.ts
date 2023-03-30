@@ -25,6 +25,13 @@ export interface PageInfo extends SanityBody {
 	profilePic: Image;
 }
 
+export interface Technology extends SanityBody {
+    _type: 'skill';
+    image: Image;
+    progress: number;
+    title: string;
+}
+
 export interface Social extends SanityBody {
 	_type: 'social';
 	title: string;
