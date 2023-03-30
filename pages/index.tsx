@@ -1,13 +1,22 @@
 import Head from 'next/head';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
-import type { NextPage } from 'next';
+import type { GetStaticProps, NextPage } from 'next';
 import About from '@/components/About';
 import WorkExperience from '@/components/WorkExperience';
 import Skills from '@/components/Skills';
 import Projects from '@/components/Projects';
 import ContactMe from '@/components/ContactMe';
 import Link from 'next/link';
+import { Experience, PageInfo, Project, Skill, Social } from '@/typings';
+
+type Props = {
+	pageInfo: PageInfo;
+	experiences: Experience[];
+	skills: Skill[];
+	projects: Project[];
+	socials: Social[];
+}
 
 const Home: NextPage = () => {
 	return (
@@ -70,3 +79,7 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+
+}
