@@ -30,7 +30,7 @@ const Home = ({pageInfo, experiences, skills, projects, socials}: Props) => {
 				<title>Noah Bruce</title>
 			</Head>
 
-			<Header />
+			<Header socials={socials} />
 
 			<section
 				id='hero'
