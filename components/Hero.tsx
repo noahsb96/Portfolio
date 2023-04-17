@@ -4,12 +4,15 @@ import BackgroundCircles from './BackgroundCircles';
 import Headshot from '../images/Headshot.jpg';
 import Image from 'next/image';
 import Link from 'next/link';
+import { PageInfo } from '@/typings';
 
-type Props = {};
+type Props = {
+	pageInfo: PageInfo;
+};
 
-export default function Hero({}: Props) {
+export default function Hero({ pageInfo }: Props) {
 	const [text, count] = useTypewriter({
-		words: ["Hi, My Name's Noah", 'Developer', 'Designer', 'Creator'],
+		words: [`Hi, My Name's ${pageInfo?.name}`, 'Developer', 'Designer', 'Creator'],
 		loop: true,
 		delaySpeed: 2000,
 	});
