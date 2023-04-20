@@ -38,16 +38,7 @@ function About({ pageInfo }: Props) {
 					<span className='underline decoration-[#F7AB0A]/50'>little</span>{' '}
 					background
 				</h4>
-				<p className='text-base'>
-					I am a software engineer and a musician. I've put my heart and soul
-					into my two passions. Music and technology. Whether it be playing the
-					drums across the US or learning HTML, CSS and JavaScript, I've taken
-					the ability to find creative solutions to difficult problems,
-					flexibility, time management and working with a team. I'm dedicated,
-					motivated and passionate and whether it be playing drums in front of
-					hundreds or writing web applications for thousands I know that I can
-					deliver the best product possible.
-				</p>
+				<p className='text-base'>{pageInfo?.backgroundInformation}</p>
 			</div>
 		</motion.div>
 	);
