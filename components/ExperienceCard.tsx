@@ -19,7 +19,7 @@ function ExperienceCard({ experience }: Props) {
 				transition={{ duration: 1.2 }}
 				whileInView={{ opacity: 1, y: 0 }}
 				viewport={{ once: true }}
-				className='w-32 h-32 rounded-full xl:w-[200px] xl:h-[200px] object-cover object-center'
+				className='w-32 h-32 rounded-full xl:w-[200px] xl:h-[200px] object-cover object-center mt-10'
 				src={urlFor(experience?.companyImage).url()}
 				alt=''
 			/>
@@ -30,13 +30,15 @@ function ExperienceCard({ experience }: Props) {
 				</h4>
 				<p className='font-bold text-2xl mt-1'>Illegal Pete's</p>
 				<p className='uppercase py-5 text-gray-300'>
-					Started work... - Ended...
+					{new Date(experience.dateStarted).toDateString()} -{' '}
+					{experience.isCurrentlyWorkingHere
+						? 'Present'
+						: new Date(experience.dateEnded).toDateString()}
 				</p>
 				<ul className='list-disc space-y-4 ml-5 text-lg'>
-					<li>Summary Points</li>
-					<li>Summary Points</li>
-					<li>Summary Points</li>
-					<li>Summary Points</li>
+					{experience.points.map((point, i) => (
+						<li key={i}>{point}</li>
+					))}
 				</ul>
 			</div>
 		</article>
