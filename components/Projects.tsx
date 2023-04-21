@@ -38,15 +38,11 @@ function Projects({ projects }: Props) {
 								<span className='underline decoration-[#F7AB0A]/50'>
 									Case Study {i + 1} of {projects.length}:
 								</span>{' '}
-								UPS clone
+								{project?.title}
 							</h4>
 
 							<p className='text-lg text-center md:text-left'>
-								Netflix 2.0 app that has a Log In and Log Out Authentication
-								with Google. It has a beautiful Home Screen with all the movies
-								looking just like Netflix. There is also a subscription page
-								where you can see your active monthly subscription. We also use
-								Stripe Payments for the monthly Netflix Subscriptions!
+								
 							</p>
 						</div>
 					</motion.div>
