@@ -15,7 +15,7 @@ function Projects({ projects }: Props) {
 			</h3>
 
 			<div className='relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80'>
-				{projects?.map((project, i) => (
+				{projects?.map((project) => (
 					<motion.div
 						initial={{ opacity: 0 }}
 						whileInView={{ opacity: 1 }}
@@ -38,8 +38,19 @@ function Projects({ projects }: Props) {
 								{project?.title}
 							</h4>
 
+							<div className='flex items-center space-x-2 justify-center'>
+								{project?.technologies.map((technology) => (
+									<img
+										className='h-10 w-10'
+										key={technology._id}
+										src={urlFor(technology.image).url()}
+										alt=''
+									/>
+								))}
+							</div>
+
 							<p className='text-lg text-center md:text-left'>
-								{project.summary}
+								{project?.summary}
 							</p>
 						</div>
 					</motion.div>
