@@ -154,13 +154,13 @@ function ContactMe({}: Props) {
 						onChange={handleInput}
 						className='contactInput'
 					/>
-					<div>{errorMessage}</div>
-					<div>{confirmationMessage}</div>
 					<button
 						type='submit'
-						className='bg-[#F7AB0A] py-5 px-10 rounded-md text-black font-bold text-lg'>
+						className='bg-[#ba16ec] py-5 px-10 rounded-md text-black font-bold text-lg'>
 						Submit
 					</button>
+					<div className='text-center text-2xl'>{errorMessage}</div>
+					<div className='text-center text-2xl'>{confirmationMessage}</div>
 				</form>
 			</div>
 		</div>
