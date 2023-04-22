@@ -1,22 +1,94 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { PhoneIcon, MapPinIcon, EnvelopeIcon } from '@heroicons/react/24/solid';
-import { useForm, SubmitHandler } from 'react-hook-form';
-
-type Inputs = {
-	name: string;
-	email: string;
-	subject: string;
-	message: string;
-};
+import emailjs from '@emailjs/browser';
 
 type Props = {};
 
 function ContactMe({}: Props) {
-	const { register, handleSubmit } = useForm<Inputs>();
+	const [name, setName] = useState('');
+	const [email, setEmail] = useState('');
+	const [message, setMessage] = useState('');
+	const [errorMessage, setErrorMessage] = useState('');
+	const [confirmationMessage, setConfirmationMessage] = useState('');
+	const form = useRef<HTMLFormElement>(null);
 
-	const onSubmit: SubmitHandler<Inputs> = (formData) => {
-		window.location.href = `mailto:noahsb96@yahoo.com?subject=${formData.subject}&body=Hi, my name is ${formData.name}. ${formData.message} (${formData.email})`;
+	useEffect(() => {
+		setConfirmationMessage('');
+	}, []);
+
+	const handleInput = ({
+		target,
+	}: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+		const { name, value } = target;
+		if (name === 'name') {
+			setName(value);
+		}
+		if (name === 'email') {
+			setEmail(value);
+		}
+		if (name === 'message') {
+			setMessage(value);
+		}
 	};
+
+	const checkInput = ({
+		target,
+	}: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+		const { name, value } = target;
+
+		if (name === 'name') {
+			if (value === '') {
+				setErrorMessage('Name is required');
+			}
+		}
+		if (name === 'email') {
+			if (value === '') {
+				setErrorMessage('Email is required');
+			} else if (!/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(.\w{2,3})+$/.test(value)) {
+				setErrorMessage('You must enter a valid email');
+			}
+		}
+		if (name === 'message') {
+			if (value === '') {
+				setErrorMessage('Message is required');
+			}
+		}
+	};
+
+	const sentEmail = () => {
+		setName('');
+		setEmail('');
+		setMessage('');
+		setConfirmationMessage(
+			"Message sent. Thank you and I'll be in touch soon!"
+		);
+	};
+
+	const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+		e.preventDefault();
+		if (!/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(.\w{2,3})+$/.test(email)) {
+			setErrorMessage('Invalid Email');
+			return;
+		}
+		const formInfo = form.current ? form.current : '';
+
+		emailjs
+			.sendForm(
+				'service_wu6mj7b',
+				'template_hxo8y4h',
+				formInfo,
+				'6occcHkFY0IHAKc14'
+			)
+			.then(
+				(result) => {
+					sentEmail();
+				},
+				(error) => {
+					console.log(error.text);
+				}
+			);
+	};
+
 	return (
 		<div className='h-screen flex relative flex-col text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center'>
 			<h3 className='absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl'>
@@ -47,35 +119,43 @@ function ContactMe({}: Props) {
 				</div>
 
 				<form
-					onSubmit={handleSubmit(onSubmit)}
+					ref={form}
+					onSubmit={sendEmail}
 					className='flex flex-col space-y-2 w-fit mx-auto'>
 					<div className='flex space-x-2'>
 						<input
-							{...register('name')}
-							placeholder='Name'
-							className='contactInput'
+							name='name'
 							type='text'
+							value={name}
+							onBlur={checkInput}
+							onChange={handleInput}
+							onClick={() => setErrorMessage('')}
+							placeholder='Name'
+							required
+							className='contactInput'
 						/>
 						<input
-							{...register('email')}
-							placeholder='Email'
-							className='contactInput'
+							name='email'
 							type='email'
+							value={email}
+							onChange={handleInput}
+							onBlur={checkInput}
+							onClick={() => setErrorMessage('')}
+							placeholder='Email'
+							required
+							className='contactInput'
 						/>
 					</div>
-
-					<input
-						{...register('subject')}
-						placeholder='Subject'
-						className='contactInput'
-						type='text'
-					/>
-
 					<textarea
-						{...register('message')}
-						placeholder='Message'
+						name='message'
+						value={message}
+						onBlur={checkInput}
+						onClick={() => setErrorMessage('')}
+						onChange={handleInput}
 						className='contactInput'
 					/>
+					<div>{errorMessage}</div>
+					<div>{confirmationMessage}</div>
 					<button
 						type='submit'
 						className='bg-[#F7AB0A] py-5 px-10 rounded-md text-black font-bold text-lg'>
