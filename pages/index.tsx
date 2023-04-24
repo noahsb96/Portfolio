@@ -25,7 +25,7 @@ type Props = {
 
 const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
 	return (
-		<div className='bg-[rgb(5,5,5)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80'>
+		<div className='bg-[rgb(5,5,5)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#ba16ec]/80'>
 			<Head>
 				<title>Noah Bruce</title>
 			</Head>

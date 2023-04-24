@@ -35,7 +35,7 @@ function About({ pageInfo }: Props) {
 			<div className='space-y-10 px-0 md:px-10'>
 				<h4 className='text-4xl font-semibold'>
 					Here is a{' '}
-					<span className='underline decoration-[#F7AB0A]/50'>little</span>{' '}
+					<span className='underline decoration-[#ba16ec]/50'>little</span>{' '}
 					background
 				</h4>
 				<p className='text-base'>{pageInfo?.backgroundInformation}</p>
