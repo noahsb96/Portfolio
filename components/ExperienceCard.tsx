@@ -26,9 +26,9 @@ function ExperienceCard({ experience }: Props) {
 
 			<div className='px-0 md:px-10'>
 				<h4 className='text-4xl font-light'>
-					Front Line / Back of House / Shift Supervisor / Bartender
+					{experience?.jobTitle}
 				</h4>
-				<p className='font-bold text-2xl mt-1'>Illegal Pete's</p>
+				<p className='font-bold text-2xl mt-1'>{experience?.company}</p>
 				<p className='uppercase py-5 text-gray-300'>
 					{new Date(experience.dateStarted).toDateString()} -{' '}
 					{experience.isCurrentlyWorkingHere
