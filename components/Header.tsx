@@ -15,7 +15,7 @@ export default function Header({ socials }: Props) {
 				initial={{ x: -500, opacity: 0, scale: 0.5 }}
 				animate={{ x: 0, opacity: 1, scale: 1 }}
 				transition={{ duration: 1.5 }}
-				className='flex flex-row items-center'>
+				className='flex flex-row items-center hover:border-[#ba16ec]/40'>
 				{socials.map((social) => (
 					<SocialIcon
 						key={social._id}
@@ -30,7 +30,7 @@ export default function Header({ socials }: Props) {
 				initial={{ x: 500, opacity: 0, scale: 0.5 }}
 				animate={{ x: 0, opacity: 1, scale: 1 }}
 				transition={{ duration: 1.5 }}
-				className='flex flex-row items-center text-gray-300 cursor-pointer'>
+				className='flex flex-row items-center border-[#242424] rounded-full text-gray-300 cursor-pointer'>
 				<SocialIcon
 					className='cursor-pointer'
 					url='#contact'
