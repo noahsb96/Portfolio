@@ -23,7 +23,7 @@ type Props = {
 	socials: Social[];
 };
 
-const Home = ({pageInfo, experiences, skills, projects, socials}: Props) => {
+const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
 	return (
 		<div className='bg-[rgb(5,5,5)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80'>
 			<Head>
@@ -47,7 +47,7 @@ const Home = ({pageInfo, experiences, skills, projects, socials}: Props) => {
 			<section
 				id='experience'
 				className='snap-center'>
-				<WorkExperience  experiences={experiences} />
+				<WorkExperience experiences={experiences} />
 			</section>
 
 			<section
@@ -68,17 +68,17 @@ const Home = ({pageInfo, experiences, skills, projects, socials}: Props) => {
 				<ContactMe />
 			</section>
 
-			<Link href='#hero'>
-				<footer className='sticky bottom-5 w-full cursor-pointer'>
-					<div className='flex items-center justify-center'>
+			<footer className='sticky bottom-5 w-full'>
+				<div className='flex items-center justify-center'>
+					<Link href='#hero'>
 						<img
 							className='h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer'
 							src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSTIBXDY0ex8l1WNq-DTavYQvOz8pl2te4tc-rjBfzIQ&s'
 							alt=''
 						/>
-					</div>
-				</footer>
-			</Link>
+					</Link>
+				</div>
+			</footer>
 		</div>
 	);
 };
@@ -101,5 +101,5 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 			socials,
 		},
 		revalidate: 3600,
-	}
+	};
 };
