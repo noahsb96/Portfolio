@@ -35,14 +35,14 @@ function Projects({ projects }: Props) {
 						/>
 
 						<div className='space-y-10 px-0 md:px-10 max-w-6xl'>
-							<h4 className='text-4xl font-semibold text-center'>
+							<h4 className='text-4xl font-semibold text-center sm:text-2xl'>
 								{project?.title}
 							</h4>
 
 							<div className='flex items-center space-x-2 justify-center'>
 								{project?.technologies.map((technology) => (
 									<img
-										className='h-10 w-10'
+										className='h-10 w-10 sm:h-5 sm:w-5'
 										key={technology._id}
 										src={urlFor(technology.image).url()}
 										alt=''
